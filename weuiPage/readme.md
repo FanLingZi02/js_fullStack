@@ -1,0 +1,5 @@
+css里面
+同级不用打空格
+父级子集打空格
+颜色透明rgba
+settimeout控制时间函数 会修改作用域 需要在settimeout前面定义一个变量
