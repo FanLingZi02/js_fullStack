@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    html {
+        font: 12px Helvetic, Arial, sans-serif;
+        line-height: 1.62;
+        display: block;
+        color: #111;
+        background: #fff;
+    }
+
+    body,
+    td,
+    th {
+        font: 12px Helvetica, Arial, sans-serif;
+        line-height: 1.62;
+    }
+
+    body {
+        padding-top: 30px;
+    }
+
+    #annoy-nav {
+        width: 950px;
+        margin: 0 auto 25px;
+    }
+
+    #annoy-nav .annoy-nav-links {
+        float: right;
+        margin-top: 6px;
+    }
+
+    ul,
+    ol {
+        list-style: none;
+    }
+
+    #annoy-nav .annoy-nav-links li {
+        display: inline-block;
+        zoom: 1;
+        margin: 0 0 0 17px;
+    }
+
+    li {
+        text-align: -webkit-match-parent;
+    }
+
+    #annoy-nav .annoy-nav-links li a {
+        display: inline-block;
+        zoom: 1;
+        width: 40px;
+        height: 20px;
+        overflow: hidden;
+        margin: 0;
+        line-height: 20em;
+        outline: none;
+        vertical-align: middle;
+        background: transparent url(./images/anony_nav_logo.png) no-repeat 100% 100%;
+    }
+
+    a:visited {
+        color: #669;
+        text-decoration: none;
+    }
+
+    a:link {
+        color: #37a;
+        text-decoration: none;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-book {
+        background-position: 0 0;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-movie {
+        background-position: -60px 0;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-music {
+        background-position: -120px 0;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-group {
+        background-position: -180px 0;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-events {
+        background-position: -299px 0;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-fm {
+        background-position: -241px 0;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-shijian {
+        margin-bottom: 1px;
+        background: transparent url(./images/ic_shijian_home_nav.png) no-repeat 100% 100%;
+        background-size: cover;
+    }
+
+    #annoy-nav .annoy-nav-links li .lnk-market {
+        width: 42px;
+        background-position: -421px 0;
+    }
+
+    #annoy-nav h1 a {
+        display: block;
+        height: 34px;
+        line-height: 10em;
+    }
+
+    #annoy-nav .annoy-srh{
+        position: relative;
+        display: inline-block;
+        zoom: 1;
+        vertical-align: middle;
+        width: 270px;
+        height: 30px;
+        border:1px solid #c3c3c3;
+    }
+
+    form{
+        margin: 0;
+        padding: 0;
+        border: 0px;
+    }
+
+    #annoy-nav .annoy-srh .inp{
+        display: block;
+        height: 30px;
+        overflow: hidden;
+    }
+
+    input   {
+        -webkit-writing-mode: horizontal-tb !important;
+    }
+
+    input{
+        text-rendering: auto;
+        color: initial;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        font: 400 13.3333px Arial;
+    }
+</style>
+
+<body>
+    <div id="annoy-nav">
+        <div class="annoy-nav-links">
+            <ul>
+                <li> <a target="_blank" class="lnk-book" href="https://book.douban.com">豆瓣读书</a></li>
+                <li> <a target="_blank" class="lnk-movie" href="https://movie.douban.com">豆瓣电影</a></li>
+                <li> <a target="_blank" class="lnk-music" href="https://music.douban.com">豆瓣音乐</a></li>
+                <li> <a target="_blank" class="lnk-group" href="https://www.douban.com/group/">豆瓣小组</a></li>
+                <li> <a target="_blank" class="lnk-events" href="https://www.douban.com/location/">豆瓣同城</a></li>
+                <li> <a target="_blank" class="lnk-fm" href="https://douban.fm">豆瓣FM</a></li>
+                <li> <a target="_blank" class="lnk-shijian"
+                        href="https://time.douban.com/?dt_time_source=douban-web_anonymous_index_top_nav">豆瓣时间</a></li>
+                <li> <a target="_blank" class="lnk-market"
+                        href="https://market.douban.com?utm_campaign=anonymous_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web">豆瓣豆品</a>
+                </li>
+            </ul>
+        </div>
+        <h1>
+            <a href="https://www.douban.com">豆瓣</a>
+        </h1>
+        <div class="anony-srh">
+            <form action="https://www.douban.com/search" method="get">
+                <span class="inp"><input type="text" maxlength="60" size="12" placeholder="书籍、电影、音乐、小组、小站、成员" name="q"
+                        autocomplete="off"></span>
+                <span class="bn"><input type="submit" value="搜索"></span>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

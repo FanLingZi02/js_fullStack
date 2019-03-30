@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .cat {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      background-color: lightblue;
+    }
+
+    .maoshenti {
+      width: 117px;
+      height: 201px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url(./maoshenti.png) no-repeat;
+      z-index: 2;
+      top: 30%;
+      left: 30%;
+
+    }
+
+    .maoyan {
+      width: 3px;
+      height: 3px;
+      position: absolute;
+
+    }
+
+    .maoyan1 {
+      background: url(./maoyan1.png) no-repeat;
+      right: 40px;
+      bottom: 24px;
+    }
+
+    .maoyan2 {
+      background: url(./maoyan2.png) no-repeat;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    .maozui {
+      width: 4px;
+      height: 3px;
+      position: absolute;
+      bottom: 11px;
+      right: 33px;
+      background: url(./maozui.png) no-repeat;
+      z-index: 3;
+    }
+
+    .maowei {
+      width: 64px;
+      height: 194px;
+      background: url(./maowei.png) no-repeat;
+      position: absolute;
+      left: 0;
+      top: -182px;
+      transform-origin: 40% 96%;
+      animation: ani_maowei 3s ease-in-out infinite;
+    }
+
+    @keyframes ani_maowei {
+      0% {
+        transform: rotate(-5deg);
+      }
+
+      50% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(-5deg);
+      }
+    }
+
+    .maozhua {
+      width: 34px;
+      height: 81px;
+      background: url(./maozhua.png) no-repeat;
+      right: 22px;
+      bottom: -70px;
+      position: absolute;
+      z-index: 1;
+      transform-origin: 60% 4%;
+      animation: ani_maozhua 3s ease-in-out infinite;
+    }
+
+    @keyframes ani_maozhua {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(-11deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cat">
+    <div class="maoshenti">
+      <div class="maoyan maoyan1"></div>
+      <div class="maoyan maoyan2"></div>
+      <div class="maozui"></div>
+      <div class="maozhua"></div>
+      <div class="maowei"></div>
+    </div>
+  </div>
+</body>
+
+</html>

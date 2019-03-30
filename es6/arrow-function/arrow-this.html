@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const menghuai={
+            msg:'this is 梦淮'
+        } 
+        const lingzi={
+            msg: 'this is lingzi'
+        }
+        function menghuai_func(){
+        var arrow_menghuai_func=()=>{
+            console.log(this);
+            console.log(this.msg);
+        }
+        arrow_menghuai_func();
+    }  
+    menghuai_func.call (lingzi);
+    // menghuai_func.call(menghuai);
+        // 
+        // menghuai_func.call(menghuai);
+
+        // var arrow_menghuai_func=()=>{
+        //     console.log(this);
+        //     console.log(this.msg);
+        // }
+        // arrow_menghuai_func();
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ages = [
+        {
+            name: 'bob', 
+            age: 8
+        },
+        {
+            name: 'bob1',
+             age: 25
+        },
+        {
+            name: 'lisa',
+             age: 23
+        },
+        {
+            name:'lisa1', 
+            age: 30
+        }
+    ];
+        //age>15
+        // const ages = [18,20,30,40,10]; 
+        const this_age = ages.find((person) => {
+            return person.age>15
+        });
+        //age=30
+        const this_age_index = ages.findIndex((person) => {
+            return person.age === 30
+        });
+        //find 找不到返回undefined
+         console.log(this_age, this_age_index);
+    </script>
+</body>
+</html>
