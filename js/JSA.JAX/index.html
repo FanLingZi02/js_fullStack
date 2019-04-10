@@ -19,12 +19,38 @@
         xhr.send()
         // console.log(xhr.responseText)
         // console.log(xhr.readyState,xhr.status)
-        xhr.onreadystatechange = function() {
+        var p = new Promise((resolve,reject) => {
+          xhr.onreadystatechange = function() {
             if(xhr.readyState == 4 && xhr.status == 200){
-            console.log(xhr.responseText)
+            console.log(xhr.responseText) 
+            resolve(xhr.responseText)
          }
         }
-        console.log(123456)
+        })
+
+        function xq(){
+            return new Promise((resolve,reject) => {
+                setTimeout(() => { 
+                 console.log("淮哥又要打游戏了")
+                 resolve('游戏赢了')
+            }, 1000);
+         })
+        }
+       // xq()
+       function marry(){
+           setTimeout(() => {
+               console.log('淮哥打完游戏了!')
+           }, 500)
+        }
+       p
+        .then(xq)
+        // .then((e) => {
+        //     console.log(e)
+        //})
+        .then(marry)
+        .catch(() => {
+            console.log('淮哥睡觉了')
+        })
     </script>
 </body>
 </html>
