@@ -32,7 +32,7 @@ function minEatingSpeed(piles, H){//piles是多少把 H是多少小时
         let mid = lo + ((hi - lo) >> 1); 
         console.log('------',mid);
         //m 正好可以？
-        if(canEatAllBananas(piles,H,m)) {
+        if(canEatAllBananas(piles,H,mid)) {
             hi = mid - 1; //
         }else {
             lo = mid +1; //将最小值改为中间值+1
