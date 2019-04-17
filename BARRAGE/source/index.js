@@ -103,6 +103,9 @@ class CanvasBarrage {
             }
         })
     }
+    add(obj) {
+        this.barrages.push(new Barrage(obj, this))
+    }
 }
 
 //创建Barrage类 用来实例化每一条弹幕
@@ -163,3 +166,22 @@ video.addEventListener('play', () => {
     canvasBarrage.isPaused = false;
     canvasBarrage.render() //触发弹幕
 })
+
+// 发送弹幕的方法
+function send() {
+  let value = $txt.value;  // 输入的内容
+  let time = video.currentTime; // 当前视频时间
+  let color = $color.value;   // 选取的颜色值
+  let fontSize = $range.value; // 选取的字号大小
+  let obj = { value, time, color, fontSize };
+  // 添加弹幕数据
+  canvasBarrage.add(obj);
+  $txt.value = ''; // 清空输入框
+}
+// 点击按钮发送弹幕
+$btn.addEventListener('click', send);
+// 回车发送弹幕
+$txt.addEventListener('keyup', e => {
+  let key = e.keyCode;
+  key === 13 && send();
+});
