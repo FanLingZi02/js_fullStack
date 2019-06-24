@@ -1,0 +1,44 @@
+Arguments: 
+  D:\Node\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add player
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\git\Git\cmd;D:\Node;C:\Users\Lenovo\AppData\Local\Microsoft\WindowsApps;;C:\Users\Lenovo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Lenovo\AppData\Roaming\npm
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  11.10.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Lenovo\AppData\Local\Yarn\Cache\v4\npm-ansi-regex-3.0.0-ed0317c322064f79466c02966bddb605ab37d998\node_modules\ansi-regex\package.json' -> 'D:\fanlingzi\js_fullStack\node\event\node_modules\string-width\node_modules\ansi-regex\package.json'
+
+npm manifest: 
+  {
+    "name": "event",
+    "version": "1.0.0",
+    "description": "click \r http((req, res) => {\r    res.on('data')\r    res.on('end')\r })\r onClick\r onDbClick\r 订阅发布者模式。",
+    "main": "index.js",
+    "directories": {
+      "lib": "lib"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "inquirer": "^6.3.1",
+      "request": "^2.88.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

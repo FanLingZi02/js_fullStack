@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "今天我这边也在下雨，好巧哦",
+      "author": "aling"
+    }
+  ],
+  "comments": [
+    {
+      "body": "雨一直下",
+      "id": 1,
+      "postId": "1"
+    },
+    {
+      "body": "Hello World",
+      "postId": "1",
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "aling"
+  }
+}
