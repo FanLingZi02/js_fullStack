@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 关于call, bind, apply -->
+  <script>
+    // 定义一个变量a
+    var a = {
+      user: 'aling',
+      fn: function (n, m) {
+        console.log(this.user)
+        console.log(n + m)
+      }
+    }
+    // .call 用法
+    // var b = a.fn
+    // b.call(a, 2) // b调用 call里面第二三四...个参数按顺序逗号隔开
+    //b() 
+
+    //a.fn() // a调用 
+
+    // .apply 用法
+    // var b = a.fn
+    // b.apply(a, [1, 1]) // apply里面的第二三四....个参数一定要是数组 放到一个数组里
+
+    // .bind 用法
+    var b = a.fn
+    var c = b.bind(a, 4)
+    c(3, 5)// bind方法返回的是一个新的修改过函数 bind方法的参数一定按顺序执行
+
+
+    // call方法的实现原理
+    Function.prototype.call = function() { 
+      let [thisArg, ...args] = [...arguments] //定义参数 
+      if (!thisArg) {
+        thisArg = typeof window === 'undefind' ? global : window // 判断一个东西是不是undefind
+      }
+      // this 的指向是当前函数 func.call
+      thisArg.func = this
+      // 执行函数
+      let result = thisArg.func(...args)
+      delete thisArg.func // thisArg上并没有 func 属性 因此需要移除
+      return result
+    }
+  </script>
+</body>
+</html>

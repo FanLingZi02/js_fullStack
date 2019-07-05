@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // [1, 2, 3, 2, 3, 5] uniq
+    // Set 数组去重 具有唯一性
+    // function uniq(arr) {
+    //   return [...new Set(arr)]
+    // }
+    //console.log(uniq([1, 2, 3, 2, 3, 5]))
+    // ----------------------------------------------
+
+    // indexOf 数组去重 用一个空数组去存首次出现的元素 
+    // function uniq(arr) {
+    //   let result = []
+    //   for (let i = 0; i < arr.length; i++){
+    //     if(result.indexOf(arr[i]) === -1) {
+    //       result.push(arr[i])
+    //     }
+    //   }
+    //   return result
+    // }
+    // console.log(uniq([1, 2, 3, 2, 3, 5]))
+    // -------------------------------------------------
+
+    // includes 数组去重
+    // function uniq(arr) {
+    //   let result = []
+    //   for (let i = 0; i < arr.length; i++){
+    //     if(!result.includes(arr[i])) { // 当 includes()返回false的时候，就将该元素push到空数组中 
+    //     result.push(arr[i])
+    //     }
+    //   }
+    //   return result
+    // }
+    // console.log(uniq([1, 2, 3, 2, 3, 5]))
+    // -------------------------------------------
+
+    // map 数据结构去重
+    // function uniq(arr) {
+    //   let map = new Map()
+    //   let result = new Array() // 数组用于返回结果
+    //   for(let i = 0; i < arr.length; i++) {
+    //     if(map.has(arr[i])) { // 如果有该key值
+    //       map.set(arr[i], true) // set添加
+    //     }else {
+    //       map.set(arr[i], false) // 如果没有该key值
+    //       result.push(arr[i])
+    //     }
+    //   }
+    //   return result
+    // }
+    // console.log(uniq([1, 2, 3, 2, 3, 5]))
+    // ------------------------------------------------
+
+    // reduce 数组去重
+    function uniq(arr) {
+      return arr.reduce((prev, cur) => 
+        prev.includes(cur) ? prev : [...prev, cur], [])
+    }
+    console.log(uniq([1, 2, 3, 2, 3, 5]))
+  </script>
+</body>
+</html>

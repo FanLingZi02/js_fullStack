@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <!-- js中的浅拷贝和深拷贝 -->
+  <!-- <script>
+    // Es6解构
+    function example() {
+      return [1, 2, 3]
+    }
+
+    // let b = example()[1] // Es5写法
+    // console.log(b)
+
+    let [a, b, c] = example()
+    console.log(a) // 解构的方法就是一一对应 Es6写法
+
+    let [x, y] = [1, 2] // 数组的解构
+
+    // 对象的解构
+    // let {foo, bar} = {foo: "aaa", bar: "bbb"}
+    // foo重新命名为baz
+    let {foo: baz} = {foo: 'abc'}
+    console.log(foo)
+    // console.log(baz)
+  </script> -->
+  <!-- <script>
+    // 浅拷贝 会受本来数据的影响，对象拼接和对象解构 
+    //如果先解构了，浅拷贝只会受基本数据类型影响，不受复杂数据类型影响
+    let obj = {
+      name: 'aling',
+      age: 21,
+      like: ['lazy'] // 数组不是基本数据类型
+    }
+   
+    let obj2 = Object.assign({}, obj) // Object.assign()方法可以把任意的多个源对象的可枚举属性拷贝给目标对象，然后返回目标对象
+    let obj3 = {...obj} // 把obj里面的属性【直接】解构出来 
+    obj.name = '破小孩'
+    obj.like.push('sleep')
+    console.log(obj2)
+    console.log(obj3)
+
+  // 深拷贝  不会受本来数据的影响  对象转换
+  // 实现原理： 用JSON.stringify将对象转成JSON字符串，再用JSON.parse()把字符串解析成对象，一去一来，新的对象产生了，而且对象会开辟新的栈，实现深拷贝。
+  // let obj4 = JSON.parse(JSON.stringify(obj))
+  // obj.name = '破小孩'
+  // onsole.log(obj4) // 不会受改变属性的影响， 
+  </script> -->
+
+  <script>
+    // 深拷贝的原理
+    function deepClone(obj, hash = new WeakMap()) { // 定义一个方法  WeakMap对象是一组键/值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的。
+      //递归拷贝
+      if(obj instanceof RegExp) {
+        return RegExp(obj)
+      }
+      if (obj instanceof Date) {
+        return Date(obj) 
+      }
+      if (obj === null || typeof obj !== 'object') {
+        // 如果不是复杂的数据类型， 直接返回
+        return obj
+      }
+      if(hash.has(obj)) {
+        return hash.get(obj)
+      }
+      // 如果obj是数组，那么obj.constructor是[function: Array]
+      // 如果obj是对象，那么obj.constructor是 [function: object]
+      let t = new obj.constructor()
+      hash.set(obj, t) // set添加值
+      for(let key in obj) {
+        // 递归
+        if(obj.hasOwnProperty(key)) { // 是否是自身属性
+          t[key] = deepClone(obj[key], hash)
+        }
+      }
+      return t 
+    }
+  </script>
+</body>
+</html>
