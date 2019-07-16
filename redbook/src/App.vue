@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <v-message>
+    </v-message>
   </div>
 </template>
 
 <script>
+import message from '@/components/message'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'v-message': message
+  }
 }
 </script>
 

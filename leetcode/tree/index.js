@@ -13,7 +13,7 @@ a1.right = a3;
 a3.left = a4;
 a3.right = a5;
 
-// 层序遍历
+// 层序遍历 栈
 function levelOrderTraversal(root) {
   if (!root) return [];
   const items = []; // 存放所有节点 返回结果
@@ -41,7 +41,7 @@ function levelOrderTraversal(root) {
     }
   }
 }
-
+console.log(levelOrderTraversal(root));
 // queue 3 null   [null, 9, 20]
 // items []
 // levelNodes []   [3]

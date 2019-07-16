@@ -47,4 +47,3 @@ export default {
         color hsla(0,0%,100%,.3)
 </style>
 
-</style>
